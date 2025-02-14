@@ -57,8 +57,6 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{% url "index" %}" class="active">Home</a></li>
-          {% if not user.is_authenticated %}<li><a href="{% url "login" %}">Login</a></li>{% endif %}
-          {% if not user.is_authenticated %}<li><a href="{% url "register" %}">Register</a></li>{% endif %}
           {% if user.is_authenticated %}<li><a href="{% url "signout" %}">Signout</a></li>{% endif %}
         </ul>
       </nav><!-- .navbar -->
@@ -86,34 +84,11 @@
             <p style="margin-top: 5px; font-size: 16px; color: #4d4d4d;">From Basic Part 01 (Episodes 01 to 13)</p>
           </div>
         
-          {% for video in user_progress %}
+          {% for video in videos %}
           <div class="card mt-4">
             {% include "videos.html" %}
           </div>
-          
-          <!-- Unlock Modal -->
-          <div class="modal fade" id="unlockModal{{ video.id }}" tabindex="-1" aria-labelledby="unlockModalLabel{{ video.id }}" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="unlockModalLabel{{ video.id }}">Unlock Video</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <p>Would you like to unlock this video?</p>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          
-                          <a href="{% url "unlock_video" video.id %}" class="btn btn-primary">Unlock</a>
-                          
-                        </div>
-                  </div>
-              </div>
-          </div>
           {% endfor %}
-          
-          
 
         </div>
     </div>

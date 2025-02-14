@@ -33,13 +33,11 @@
           {% if not user.is_authenticated %}<li><a href="{% url "register" %}">Register</a></li>{% endif %}
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">About</a></li>
-          <!-- <li><a href="">Contact</a></li> -->
+          <li><a href="{% url "contact" %}">Contact</a></li>
           {% if user.is_authenticated %}<li><a href="{% url "signout" %}">Signout</a></li>{% endif %}
           {% if user.is_authenticated %}
-            {% if user.username == 'TmcAdmin' %}
-              <li><a class="get-a-quote" href="{% url "useradmin" %}">Administration</a></li>
-            {% elif user.allowcourse.course_allowed %}
-              <li><a class="get-a-quote" href="{% url "videos" %}">Start Learning</a></li>
+            {% if user.allowcourse.course_allowed %}
+              <li><a class="get-a-quote" href="{% url "start_learning" %}">Start Learning</a></li>
             {% else %}
               <li><a class="get-a-quote" href="#" data-bs-toggle="modal" data-bs-target="#alertModal_StartLearning">Start Learning</a></li>
             {% endif %}
@@ -49,7 +47,6 @@
     </div>
   </header><!-- End Header -->
   <!-- End Header -->
-
 
 
   <!-- ======= Hero Section ======= -->
@@ -66,7 +63,7 @@
             {% if user.is_authenticated %}
 
             {% if user.allowcourse.course_allowed %}
-            <a class="btn btn-outline-secondary font-monospace mt-3" href="{% url 'videos' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
+            <a class="btn btn-outline-secondary font-monospace mt-3" href="{% url 'start_learning' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
             {% else %}
               <a class="btn btn-outline-secondary font-monospace mt-3" href="#" data-bs-toggle="modal" data-bs-target="#alertModal_StartLearning">Start Learning</a>
             {% endif %}
@@ -103,7 +100,7 @@
             {% if user.is_authenticated %}
 
                 {% if user.allowcourse.course_allowed %}
-                <a class="cta-btn" href="{% url 'videos' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
+                <a class="cta-btn" href="{% url 'start_learning' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
                 {% else %}
                   <a class="cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#alertModal_StartLearning">Start Learning</a>
                 {% endif %}
@@ -240,7 +237,7 @@
             {% if user.is_authenticated %}
 
               {% if user.allowcourse.course_allowed %}
-              <a class="cta-btn" href="{% url 'videos' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
+              <a class="cta-btn" href="{% url 'start_learning' %}" data-toggle="modal" data-target="#loginModal">Start Learning</a>
               {% else %}
                 <a class="cta-btn" href="#" data-bs-toggle="modal" data-bs-target="#alertModal_StartLearning">Start Learning</a>
               {% endif %}

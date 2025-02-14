@@ -146,15 +146,11 @@ def contact(request):
 
 
 
-# @login_required
-# def videos(request):
-#     videos = Video.objects.all()
+@login_required
+def start_learning(request):
+    videos = Video.objects.all()
 
-#     user = request.user  
-#     user_progress = UserProgress.objects.filter(user=user)
-#     print(user_progress)
-
-#     return render(request, 'allvideos.html', {'videos': videos, 'user_progress':user_progress})
+    return render(request, 'allvideos.html', {'videos': videos })
 
 
 # @login_required
