@@ -30,7 +30,6 @@
         <ul>
           <li><a href="{% url "index" %}" class="active">Home</a></li>
           {% if not user.is_authenticated %}<li><a href="{% url "login" %}">Login</a></li>{% endif %}
-          {% if not user.is_authenticated %}<li><a href="{% url "register" %}">Register</a></li>{% endif %}
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">About</a></li>
           <li><a href="{% url "contact" %}">Contact</a></li>
@@ -69,7 +68,7 @@
             {% endif %}
 
           {% else %}
-          <a class="btn btn-outline-secondary font-monospace mt-5" href="{% url 'register' %}" data-toggle="modal" data-target="#loginModal">Register Now!</a>
+          <a class="btn btn-outline-secondary font-monospace mt-5" href="{% url 'login' %}" data-toggle="modal" data-target="#loginModal">Login Now!</a>
         {% endif %}
           </p>
 
@@ -300,8 +299,8 @@
               <i class="bi bi-envelope"></i> tmcompany369@gmail.com
             </a>
             <br>
-            <a href="https://t.me/TMCTradingo" target="_blank">
-              <i class="bi bi-telegram"></i> t.me/TMCTradingo
+            <a href="https://t.me/TMCtradingo" target="_blank">
+              <i class="bi bi-telegram"></i>@TMCtradingo
             </a>
           </p>
           <div class="social-links d-flex mt-4">
@@ -309,7 +308,7 @@
              <a href="https://t.me/TMCTrading" class="telegram" target="_blank" title="Visit our Telegram page">
               <i class="bi bi-telegram"></i>
             </a>
-            <a href="mailto:tmcompany369@gmail.com" class="email" title="Send us an email">
+            <a href="mailto:tmc369@gmail.com" class="email" title="Send us an email">
               <i class="bi bi-envelope"></i>
             </a>
              
@@ -321,7 +320,6 @@
           <ul>
             <li><a href="{% url "index" %}">Home</a></li>
             <li><a href="{% url "login" %}">Login</a></li>
-            <li><a href="{% url "register" %}">Register</a></li>
             <li><a href="#pricing">Pricing</a></li>
           </ul>
         </div>
