@@ -305,7 +305,7 @@
           </p>
           <div class="social-links d-flex mt-4">
              <!-- ======= Footer =======  --> 
-             <a href="https://t.me/TMCTrading" class="telegram" target="_blank" title="Visit our Telegram page">
+             <a href="https://t.me/TMCtradingo" class="telegram" target="_blank" title="Visit our Telegram page">
               <i class="bi bi-telegram"></i>
             </a>
             <a href="mailto:tmc369@gmail.com" class="email" title="Send us an email">
@@ -354,23 +354,6 @@
 
 
 <!-- Modal -->
-{% if not user.is_authenticated %}
-<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title font-monospace" id="alertModalLabel">Login Required!</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <p class="alert alert-info m-0 text-center font-monospace">
-          To access this course, please <a href="{% url "login" %}" class="alert-link">log in here</a> prior to purchase.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-{% else %}
 <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
